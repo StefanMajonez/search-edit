@@ -20,6 +20,7 @@ $searched
 EOF
 
 ret_vim=$(whiptail --menu "Select" 15 80 5 "${search_array[@]}" 3>&1 1>&2 2>&3)
+if [ "$ret_vim" = "" ]; then exit; fi
 ret_vim_file=$(echo $ret_vim | awk -F ":" '{print $1}')
 ret_vim_line=$(echo $ret_vim | awk -F ":" '{print $2}')
 
