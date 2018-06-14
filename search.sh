@@ -7,6 +7,7 @@ else
 fi
 
 searched=$(grep -Hrin "$1" "$search_path" -C1 | sed -E 's/(-)([[:digit:]]+)(-)/:\2:/g')
+if [ "$searched" = "" ]; then exit; fi
 
 search_array=()
 
