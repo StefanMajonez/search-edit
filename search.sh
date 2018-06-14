@@ -25,5 +25,5 @@ if [ "$ret_vim" = "" ]; then exit; fi
 ret_vim_file=$(echo $ret_vim | awk -F ":" '{print $1}')
 ret_vim_line=$(echo $ret_vim | awk -F ":" '{print $2}')
 
-vim +$ret_vim_line $ret_vim_file
+$EDITOR +$ret_vim_line $ret_vim_file
 
